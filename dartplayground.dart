@@ -23,7 +23,7 @@ void dataTypes() {
   bool single = true;
   dynamic anything;
 
-  var stringSet = <String>{"Sodium", "Lithium", "Alcohols"}; // OR
+  var stringSet = <String>{"Dart", "Swift", "Rust"}; // OR
   Set<int> intSet = {1, 2, 3};
 
   List<int> numList = [0, 4, 6, 1];
@@ -57,8 +57,8 @@ void functions() {
   }
 
   /**
-     * ReturnType functionName(parameterType name){ body }
-     * */
+   * ReturnType functionName(parameterType name){ body }
+   * */
 
   void sayHelloToName(String name) {
     print("Hello there $name 😋");
@@ -71,6 +71,18 @@ void functions() {
   sayHello();
   sayHelloToName("Eric");
   print("User age is " + getUserAge().toString());
+
+  // position-type must match when calling this function
+  dynamic positionalArguments(int age, String name) {}
+  positionalArguments(21, "Eric");
+
+  // named parameter with default values- position doesn't matter
+  void namedParameter({int? age, String name = ""}) {} // here age is nullable
+  namedParameter(name: "Eric made it here!", age: 21);
+
+  // optional parameters
+  void optionalParameter(int age, bool rich, [String name = ""]) {}
+  optionalParameter(21, false); // non optional params are positional
 }
 
 void controlStructures() {
@@ -146,9 +158,10 @@ class ControlStructures {
   }
 }
 
+// Class
 class Player {
-  String? name;
-  double? score; // nullable
+  String? name; // nullable
+  double? score;
   double? timePlayed;
 
   // Default Constructor
@@ -164,7 +177,7 @@ class Player {
 
 void classes() {
   Player player1 = Player("Eric", 0.0, 40);
-  // var customPlayer = CustomPlayer("name", 0, 0);
+  var customPlayer = CustomPlayer("name", 0, 0);
   // print(customPlayer.day);
   print("""
   Player:
