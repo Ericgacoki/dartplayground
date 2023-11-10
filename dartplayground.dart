@@ -17,6 +17,8 @@ void dataTypes() {
   // String name = "Eric"; // reassignable
   var name2 = "Eric G";
   name2 = "John";
+  // late initialize variable
+  late String variableName;
 
   int age = 21;
   double score = 80.45;
